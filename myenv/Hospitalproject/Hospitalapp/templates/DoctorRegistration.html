@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+        <div class="title">Registation</div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="user_details">
+                <div class="input_pox">
+                    <span class="datails">Doctor Num</span>
+                    <input type="text" id="docnum" name="docnum">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Doctor Name</span>
+                    <input type="text" id="docname" name="docname">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Department</span>
+                    <input type="text" id="Dname" name="Dname">
+                </div>
+
+                </div>
+                <div class="gender_details">
+                <input type="radio" id="gender" name="gender" value="male">Male
+                <input type="radio" id="gender" name="gender" value="female">Female
+                <input type="radio" id="gender" name="gender" value="others">others
+
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Date of Birth</span>
+                    <input type="date" id="docdob" name="docdob">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">address</span>
+                    <input type="text"  id="docaddress" name="docaddress">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Contact</span>
+                    <input type="text" id="doccontact" name="doccontact">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Email</span>
+                    <input type="text" id="docemail" name="docemail">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Working days</span>
+                    <input type="text" id="docworkD" name="docworkD">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Username</span>
+                    <input type="text" id="usernsme" name="username">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Password</span>
+                    <input type="password" id="password"  name="password">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Confirm Password</span>
+                    <input type="password" id="password1"  name="password1">
+                </div>
+
+            </div>
+
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

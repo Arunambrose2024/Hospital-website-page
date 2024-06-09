@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="title">Appoinment</div>
+    <div class="container">
+        <form method="POST" action="/updateappointment/{{contest.result.id}}">
+            {% csrf_token %}
+            <div class="user_details">
+                <div class="input_pox">
+                    <span class="datails">Patient Name</span>
+                    <input type="text" id="pname" name="pname" value="{{ context.result.pname }}">
+                </div>
+            </div>
+                <div class="input_pox">
+                    <span class="datails">Appoinment Date</span>
+                    <input type="date" id="Adate" name="Adate" value="{{ context.result.Adate }}">
+                </div>
+            <div class="input_pox">
+                    <span class="datails">symptoms</span>
+                    <input type="text"  id="symptoms" name="symptoms" value="{{ contest.result.symptoms }}">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">department name</span>
+                <select name="Dname">
+                    {% for dtlist in context.data %}
+                    <option value="{{dtlist.Dname}}">{{dtlist.Dname}}</option>
+                    {% endfor %}
+                </select>
+                </div>
+                <div class="input_pox">
+                    <span class="datails"> doctor name</span>
+                <select name="docname">
+                    {% for dtlist in context.data1 %}
+                    <option value="{{dtlist.docname}}">{{dtlist.docname}}</option>
+                    {% endfor %}
+                </select>
+                </div>
+
+
+            <div class="button">
+                <input type="submit" value="save">
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

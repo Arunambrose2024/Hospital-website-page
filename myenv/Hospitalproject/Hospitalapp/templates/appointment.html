@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="title">Book for Appoinment</div>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="user_details">
+                <div class="input_pox">
+                    <span class="datails">Patient Name</span>
+                    <input type="text" id="pname" name="pname">
+                </div>
+            </div>
+                <div class="input_pox">
+                    <span class="datails">Appoinment Date</span>
+                    <input type="date" id="Adate" name="Adate" >
+                </div>
+            <div class="input_pox">
+                    <span class="datails">symptoms</span>
+                    <input type="text"  id="symptoms" name="symptoms">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">department name</span>
+                <select name="Dname">
+                    {% for dtlist in dtlist %}
+                    <option value="{{dtlist.Dname}}">{{dtlist.Dname}}</option>
+                    {% endfor %}
+                </select>
+                </div>
+                <div class="input_pox">
+                    <span class="datails"> doctor name</span>
+                <select name="docname">
+                    {% for dtlist in dtlist %}
+                    <option value="{{dtlist.docname}}">{{dtlist.docname}}</option>
+                    {% endfor %}
+                </select>
+                </div>
+
+
+            <div class="button">
+                <input type="submit" value="Book appointment">
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+ <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stel.css">
+    <title>PatientRegistration</title>
+    <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    display: flex;
+    height: 99vh;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(123deg, #71b8e7,#9b59b6);
+}
+.container{
+    max-width: 550px;
+    width: 50%;
+    background: #fff;
+    padding: 20px 20px;
+    border-radius: 5px;
+}
+.container  .title{
+    font-size: 23px;
+    font-weight: 500;
+    position:relative;
+}
+.container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom:60px;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(123deg, #71b8e7,#9b59b6);
+}
+.container form .user_details{
+    display:;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+form .user_details .input_pox{
+    margin-bottom: 15px;
+    margin: 20px 0 12px 0;
+    width: calc(200%- 5px);
+}
+.user_details .input_pox .datails{
+    display:;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.user_details .input_pox input{
+    height: 45px;
+    width: 30%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+
+}
+/*  .user_details .input_pox input:,
+.user_details .input_pox input:valid{
+border-color:#bb983;
+} */
+form .gender_details .gender_title{
+    font-size: 20px;
+    font-weight: 500;
+}
+form .gender_details .category{
+    display: flex;
+    width: 60%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+
+form .button{
+    height: 50px;
+    margin: 55px 0;
+}
+form .button input{
+    height: 80%;
+    width: 60%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(123deg, #71b8e7,#9b59b6);
+
+}
+form .button input :hover{
+    background: linear-gradient(-123deg, #71b8e7,#9b59b6);
+}
+@media (max-width: 584px){
+    .container{
+        max-width:0%;
+    }
+    form .user_details .input_pox{
+        margin-bottom: 10px;
+        width:105%;
+    }
+    form .gender_details .category{
+        width: 100%;
+    }
+    .container form .user_details{
+        max-height:300px;
+        overflow: scroll;
+    }
+    .user_details::-webkit-scrollber{
+     width: 10;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Registation</div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="user_details">
+                <div class="input_pox">
+                    <span class="datails">Patient Name</span>
+                    <input type="text" id="pname" name="pname">
+                </div>
+
+                <div class="input_pox">
+                    <span class="datails">Email</span>
+                    <input type="text" id="pemail" name="pemail">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Contact</span>
+                    <input type="text" id="pcontact" name="pcontact">
+                </div>
+                <div class="gender_details">
+                <input type="radio" id="gender" name="gender" value="male">Male
+                <input type="radio" id="gender" name="gender" value="female">Female
+                <input type="radio" id="gender" name="gender" value="others">others
+
+                </div>
+            </div>
+                <div class="input_pox">
+                    <span class="datails">address</span>
+                    <input type="text"  id="paddress" name="paddress">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Date of Birth</span>
+                    <input type="date" id="pdob" name="pdob">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Username</span>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Password</span>
+                    <input type="password" id="password"  name="password">
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Confirm Password</span>
+                    <input type="password" id="password1"  name="password1">
+                </div>
+
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
